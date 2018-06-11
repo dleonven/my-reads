@@ -60,6 +60,7 @@ class SearchBooks extends Component {
             )
     }
 
+
 	//from the API, get the list of books that are currently on a shelf, and set the displayed books to all that list
 	//I used this here just to be able to know if the books that comes from the search are in the books with shelves, and if they do, then grab that shelf value and pass it as prop to the Book component
 	componentDidMount(){
@@ -119,8 +120,9 @@ class SearchBooks extends Component {
             <div className="search-books-results">
               <ol className="books-grid">
 
-				{/*if the query is not empty ('')...this 'if' is here so that books are not rendered whenever the query is empty*/}
-				{this.state.query !== '' &&
+				{/*if the query is not empty ('')...this 'if' is here so that books
+        are not rendered whenever the query is empty*/}
+				{this.state.query !== '' && typeof this.state.queryBooks.length !== "undefined" &&
                   this.state.queryBooks.map((book) =>
                                           <li key={book.id}>
 												<Book
