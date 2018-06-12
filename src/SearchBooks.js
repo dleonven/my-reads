@@ -120,8 +120,9 @@ class SearchBooks extends Component {
             <div className="search-books-results">
               <ol className="books-grid">
 
-				{/*if the query is not empty ('')...this 'if' is here so that books
-        are not rendered whenever the query is empty*/}
+				{/*if the query is not empty ('') and there queryBooks is not undefined...
+        this 'if' is here so that books are not rendered whenever the query is empty and to control
+        the undefined error*/}
 				{this.state.query !== '' && typeof this.state.queryBooks.length !== "undefined" &&
                   this.state.queryBooks.map((book) =>
                                           <li key={book.id}>
